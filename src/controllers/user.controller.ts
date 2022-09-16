@@ -124,3 +124,7 @@ export async function resetPasswordHandler(
 
 	return res.status(200).json({ message: 'Password was reset successfully' });
 }
+
+export async function getCurrentUserHandler(req: Request, res: Response) {
+	return res.status(200).json({ user: res.locals.user });
+}

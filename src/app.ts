@@ -5,11 +5,13 @@ import connectToDb from './utils/connectToDb';
 import log from './utils/logger';
 
 import router from './routes';
+import deserializeUser from '../middleware/deserializeUser';
 
 const app = express();
 const port = config.get<number>('port');
 
 app.use(express.json());
+app.use(deserializeUser);
 app.use('/api', router);
 
 app.listen(port, async () => {
