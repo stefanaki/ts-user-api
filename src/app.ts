@@ -1,11 +1,11 @@
 require('dotenv').config();
-import express from 'express';
 import config from 'config';
+import express from 'express';
 import connectToDb from './utils/connectToDb';
 import log from './utils/logger';
 
+import deserializeUser from './middleware/deserializeUser';
 import router from './routes';
-import deserializeUser from '../middleware/deserializeUser';
 
 const app = express();
 const port = config.get<number>('port');

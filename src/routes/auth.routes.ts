@@ -1,5 +1,5 @@
 import express from 'express';
-import validateResource from '../../middleware/validateResource';
+import validateResource from '../middleware/validateResource';
 import { createSessionHandler, refreshAccessTokenHandler } from '../controllers/auth.controller';
 import { createSessionSchema } from '../schemas/auth.schema';
 
